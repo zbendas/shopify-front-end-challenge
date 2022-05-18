@@ -1,8 +1,10 @@
 import { Configuration, OpenAIApi } from 'openai'
+import { Buffer } from 'buffer'
 
 function useOpenAI() {
+  const encodedAPIKey = new Buffer(process.env.REACT_APP_API_KEY || '', 'base64')
   const configuration = new Configuration({
-    apiKey: process.env.REACT_APP_API_KEY
+    apiKey: encodedAPIKey.toString()
   })
   const openAI = new OpenAIApi(configuration)
 
