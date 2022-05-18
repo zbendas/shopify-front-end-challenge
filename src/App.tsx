@@ -15,7 +15,9 @@ function App() {
   const [results, setResults] = React.useState<ResultInterface[]>(() => {
     const savedResults = localStorage.getItem('results')
     if (savedResults) {
-      return JSON.parse(savedResults) || []
+      return JSON.parse(savedResults)
+    } else {
+      return []
     }
   })
 
