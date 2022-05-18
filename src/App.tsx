@@ -136,11 +136,11 @@ function App() {
   }
 
   return (
-    <div className={'min-h-screen h-screen w-1/2 mx-auto flex flex-col gap-y-2 items-center'}>
-      <header className={'mr-auto'}>
-        <h1 className={'text-4xl font-bold my-4'}>From The Desk Of...</h1>
+    <div className={'min-h-screen h-screen max-h-screen w-full md:w-1/2 mx-auto flex flex-col gap-y-2 items-center'}>
+      <header className={'w-full'}>
+        <h1 className={'text-left text-4xl font-bold my-4 px-2 sm:p-0'}>From The Desk Of...</h1>
       </header>
-      <main className={'h-2/3 w-full grow flex flex-col gap-y-2'}>
+      <main className={'h-2/3 w-full grow flex flex-col gap-y-2 p-2 sm:p-0'}>
         <section>
           <form className={'flex flex-col gap-y-2'} onSubmit={handleSubmit}>
             <div className={'flex flex-col'}>
@@ -150,9 +150,9 @@ function App() {
                         onChange={handlePromptChange}
               />
             </div>
-            <div className={'flex justify-between'}>
+            <div className={'flex flex-col md:flex-row gap-y-1 md:gap-y-0 justify-between'}>
               <div className={'flex gap-x-1 items-baseline'}>
-                <label className={'font-semibold'} htmlFor={'author'}>In the style of</label>
+                <label className={'font-semibold'} htmlFor={'author'}>In the style of:</label>
                 <select className={'border border-black/25 rounded px-1'} value={author}
                         onChange={handleAuthorChange}
                 >

@@ -41,12 +41,12 @@ function Result(props: ResultProps) {
           }
         </div>
         <div className={'flex items-center justify-between'}>
-          <p className={'font-serif text-sm'}>
+          <p className={'font-serif text-sm w-2/3 sm:w-auto'}>
             {props.prompt.charAt(0).toUpperCase() + props.prompt.slice(1)}
             {
               props.author
                 ? (
-                  <span className={'italic'}> in the style of <span className={'font-semibold'}>{props.author}</span></span>
+                  <span className={'italic block sm:inline'}> in the style of <span className={'font-semibold'}>{props.author}</span></span>
                 )
                 : null
             }
